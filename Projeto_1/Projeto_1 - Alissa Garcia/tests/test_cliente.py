@@ -1,3 +1,7 @@
+import sys
+sys.path.insert(1, '/workspaces/poo-bvg/Projeto_1/Projeto_1 - Alissa Garcia/')
+import src.Cliente
+
 from src.Cliente import Clientes
 
 cliente1 = Clientes("João Silva", 30, 1000.0)
