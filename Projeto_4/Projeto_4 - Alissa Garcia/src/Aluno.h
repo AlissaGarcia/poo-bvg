@@ -22,7 +22,7 @@ public:
     ~Aluno(); // Destrutor
 // Utilização de métodos públicos
 
-//Métodos de impressão de dados.
+//Método de impressão de dados.
     void exibirInformacoes();
 };
 

@@ -30,6 +30,7 @@ public:
     void setNota(float nota);
     float getNota();
     friend bool verificarAprovacao(const Disciplina& n);
+    //Implementação da função amiga
 };
 
 
