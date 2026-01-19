@@ -6,10 +6,11 @@
 #include "Usuario.h"
 #include <string>
 #include <iostram>
+#include <vector>
 
 using namespace std;
 
-class Professor : public Usuario {
+class Professor : virtual public Usuario {
     private:
         string areadeAtuacao;
        vector<string> disciplinasMinistradas; //atributos adicionais

@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class Aluno : public Usuario {
+class Aluno : virtual public Usuario {
     private:
         string matricula;
         string curso; //atributos adicionais
