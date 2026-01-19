@@ -1,15 +1,15 @@
-//Código de Alissa Garcia ADS S3
-#include "monitor.h"
+#include "Monitor.h"
 
 // Construtor padrão
 Monitor::Monitor() : Usuario(), Aluno(), Professor() {}
 
 // Construtor parametrizado
 Monitor::Monitor(string nome, string email, string tipo,
-                 string matricula, string curso)
-    : Usuario(nome, email, tipo),
-      Aluno(nome, email, tipo, matricula, curso),
-      Professor(nome, email, tipo) {
+                 string matricula, string curso,
+                 string areaDeAtuacao)
+: Usuario(nome, email, tipo),
+  Aluno(nome, email, tipo, matricula, curso),
+  Professor(nome, email, tipo, areaDeAtuacao) {
 }
 
 // Adiciona disciplina monitorada
@@ -25,12 +25,8 @@ void Monitor::listarDisciplinasMonitoradas() {
     }
 }
 
-// Relatório completo do monitor
+// Relatório completo
 void Monitor::gerarRelatorio() {
-
-    Usuario::gerarRelatorio();      //chamando a classe base
-    Aluno::gerarRelatorio();       //chamando a classe base
-    Professor::gerarRelatorio();  //chamando a classe base
+    Aluno::gerarRelatorio();
     listarDisciplinasMonitoradas();
-    cout << endl;
 }

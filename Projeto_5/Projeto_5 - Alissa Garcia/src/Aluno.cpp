@@ -18,12 +18,29 @@
         
     }
 
+    void Aluno::adicionarNota(float nota) {
+    notas.push_back(nota);
+}
 
-// Metodo de impressao das informações com sobrescrita:
+
+// Metodo de impressao das informações com sobrecarga:
     void Aluno::gerarRelatorio(){
         Usuario::gerarRelatorio(); //chamando a classe base
         std::cout << "A matrícula do Usuário é: " << this->matricula << endl;
         std::cout << "O curso é: " << this->curso << endl;
+
+        
+    }
+ void Aluno::gerarRelatorio(bool comNota){
+        Usuario::gerarRelatorio(); //chamando a classe base
+        std::cout << "A matrícula do Usuário é: " << this->matricula << endl;
+        std::cout << "O curso é: " << this->curso << endl;
+        std::cout << "As notas são" << endl;
+         if (comNota) {
+        for (float n : notas) {
+            cout << "- " << n << endl;
+        }
+    }
 
         
     }

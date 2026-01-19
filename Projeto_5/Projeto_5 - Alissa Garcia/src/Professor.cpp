@@ -11,7 +11,7 @@
     }
 
 // Construtor parametrizado
-    Professor::Professor(string nome, string email, string tipo, string areadeAtuacao, string disciplinasMinistradas) : Usuario(nome, email, tipo){ //herança
+    Professor::Professor(string nome, string email, string tipo, string areadeAtuacao) : Usuario(nome, email, tipo){ //herança
         this->areadeAtuacao  = areadeAtuacao;
         
     }
@@ -31,5 +31,5 @@
         for (string d : disciplinasMinistradas){
             cout << "--"<< d << endl;
         }
-        cout << endl
+        cout << endl;
     }

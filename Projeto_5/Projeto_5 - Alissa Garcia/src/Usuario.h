@@ -23,7 +23,7 @@ public:
 // Utilização de métodos públicos
 
 //Método de impressão de dados.
-    virtual void gerarRelatorio(); // Método Virtual Puro
+    virtual void gerarRelatorio() = 0; // Método Virtual Puro
     virtual ~Usuario() {}  // destrutor virtual, coloquei porque vi que é uma boa prática de programação
 };
 

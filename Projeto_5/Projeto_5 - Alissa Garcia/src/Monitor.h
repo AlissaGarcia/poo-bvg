@@ -1,5 +1,3 @@
-//Código de Alissa Garcia ADS S3
-
 #ifndef MONITOR_H
 #define MONITOR_H
 
@@ -7,7 +5,6 @@
 #include "Professor.h"
 #include <vector>
 #include <string>
-#include <iostream>
 
 using namespace std;
 
@@ -18,7 +15,8 @@ private:
 public:
     Monitor();
     Monitor(string nome, string email, string tipo,
-            string matricula, string curso);
+            string matricula, string curso,
+            string areaDeAtuacao);
 
     void adicionarDisciplinaMonitorada(string disciplina);
     void listarDisciplinasMonitoradas();

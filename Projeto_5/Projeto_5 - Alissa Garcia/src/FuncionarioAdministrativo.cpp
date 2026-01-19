@@ -1,24 +1,30 @@
 //Código de Alissa Garcia ADS S3
 
-#ifndef FUNCIONARIO_ADM_H
-#define FUNCIONARIO_ADM_H
+#include "FuncionarioAdministrativo.h"
 
-#include "Usuario.h"
-#include <string>
-#include <iostram>
+//Implementação da Classe
 
-using namespace std;
+// Construtor padrão
+    Funcionario_adm::Funcionario_adm() :  Usuario() { //herança
+        this->departamento  = "NULL";
+        this->cargo = "NULL";
+        //Deixei tudo nulo por default
+    }
 
-class Funcionario_adm : public Usuario {
-    private:
-        string departamento;
-        string cargo; //atributos adicionais
-    public:
-    Funcionario_adm(); //construtor padrão
-    Funcionario_adm(string nome, string email, string tipo, string departamento, string cargo); //Cosntrutor parametrizado
+// Construtor parametrizado
+    Funcionario_adm::Funcionario_adm(string nome, string email, string tipo, string departamento, string cargo) : Usuario(nome, email, tipo){ //herança
+        this->departamento  = departamento;
+        this->cargo = cargo;
+        
+    }
 
-    void gerarRelatorio() override; //método sobrescrito
 
-};
+// Metodo de impressao das informações com sobrescrita:
+    void Funcionario_adm::gerarRelatorio(){
+        Usuario::gerarRelatorio(); //chamando a classe base
+        std::cout << "O departamento do Funcionário Administrativo é: " << this->departamento<< endl;
+        std::cout << "O cargo é: " << this->cargo << endl;
 
-#endif //FUNCIONARIO_ADM_H
+        
+    }
+
