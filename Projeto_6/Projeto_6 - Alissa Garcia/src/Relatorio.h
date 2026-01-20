@@ -4,9 +4,7 @@
 class Relatorio {
 public:
     virtual ~Relatorio() = default;
-
-    virtual void gerarRelatorio() const = 0; // Método virtual puro
+    virtual void gerarRelatorio() const = 0;
 };
 
-#endif // RELATORIO_H
-```
+#endif

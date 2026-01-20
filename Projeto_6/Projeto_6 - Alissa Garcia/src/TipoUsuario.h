@@ -1,5 +1,5 @@
-#ifndef TIPOUSUARIO_H
-#define TIPOUSUARIO_H
+#ifndef TIPO_USUARIO_H
+#define TIPO_USUARIO_H
 
 enum class TipoUsuario {
     ALUNO,
@@ -7,4 +7,4 @@ enum class TipoUsuario {
     FUNCIONARIO_ADMINISTRATIVO
 };
 
-#endif // TIPOUSUARIO_H
+#endif // TIPO_USUARIO_H
