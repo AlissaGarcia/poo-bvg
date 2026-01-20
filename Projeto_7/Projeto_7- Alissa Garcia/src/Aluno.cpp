@@ -28,5 +28,19 @@ void Aluno::gerarRelatorio() const {
     cout << "Histórico:\n";
     for (auto &h : historico) {
         h.exibir();
+    }   
+}
+
+float Aluno::calcularMedia() const {
+    if (historico.empty()) return 0;
+
+    float soma = 0;
+    for (auto &h : historico) {
+        soma += h.getNota();
     }
+    return soma / historico.size();
+}
+
+const std::vector<Aluno::HistoricoDisciplinar>& Aluno::getHistorico() const {
+    return historico;
 }

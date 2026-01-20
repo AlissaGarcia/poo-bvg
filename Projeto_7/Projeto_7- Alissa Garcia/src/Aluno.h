@@ -24,6 +24,9 @@ public:
         void exibir() const {
             cout << "- " << disciplina << " (" << ano << ") Nota: " << nota << endl;
         }
+        float getNota() const { return nota; }
+        int getAno() const { return ano; }
+        string getDisciplina() const { return disciplina; }
     };
 
 private:
@@ -38,6 +41,9 @@ public:
     void adicionarHistorico(string disciplina, int ano, float nota);
     bool autenticar(string senha) override;
     void gerarRelatorio() const override;
+    float calcularMedia() const;
+    const std::vector<HistoricoDisciplinar>& getHistorico() const;
+
 };
 
 #endif

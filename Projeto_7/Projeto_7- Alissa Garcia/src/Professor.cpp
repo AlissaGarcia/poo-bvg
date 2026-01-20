@@ -26,3 +26,11 @@ void Professor::gerarRelatorio() const {
         cout << "- " << d << endl;
     }
 }
+
+bool Professor::ministraDisciplina(string nome) const {
+    for (auto &d : disciplinasMinistradas) {
+        if (d == nome) return true;
+    }
+    return false;
+}
+

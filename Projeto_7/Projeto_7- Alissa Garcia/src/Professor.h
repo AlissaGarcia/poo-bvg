@@ -18,6 +18,10 @@ public:
     void disciplinasAdicionadas(string disciplina);
     bool autenticar(string senha) override;
     void gerarRelatorio() const override;
+    bool ministraDisciplina(string nome) const;
 };
+
+
+
 
 #endif
