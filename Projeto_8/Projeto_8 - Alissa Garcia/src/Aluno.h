@@ -3,6 +3,8 @@
 
 #include "UsuarioAutenticavel.h"
 #include <vector>
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -15,18 +17,13 @@ public:
         float nota;
 
     public:
-        HistoricoDisciplinar(string d, int a, float n) {
-            disciplina = d;
-            ano = a;
-            nota = n;
-        }
+        HistoricoDisciplinar(string d, int a, float n);
 
-        void exibir() const {
-            cout << "- " << disciplina << " (" << ano << ") Nota: " << nota << endl;
-        }
-        float getNota() const { return nota; }
-        int getAno() const { return ano; }
-        string getDisciplina() const { return disciplina; }
+        void exibir() const;
+
+        float getNota() const;
+        int getAno() const;
+        string getDisciplina() const;
     };
 
 private:
@@ -42,24 +39,11 @@ public:
     bool autenticar(string senha) override;
     void gerarRelatorio() const override;
     float calcularMedia() const;
-    const std::vector<HistoricoDisciplinar>& getHistorico() const;
+    const vector<HistoricoDisciplinar>& getHistorico() const;
 
-
-public:
-    Aluno();
-    Aluno(string nome, string email, string senha, string matricula, string curso);
-
-    void adicionarHistorico(string disciplina, int ano, float nota);
-    bool autenticar(string senha) override;
-    void gerarRelatorio() const override;
-    float calcularMedia() const;
-    const std::vector<HistoricoDisciplinar>& getHistorico() const;
-
-    // ADICIONAR
+    // ✅ GETTERS NECESSÁRIOS PARA A PERSISTÊNCIA
     string getMatricula() const;
     string getCurso() const;
-
-
 };
 
 #endif

@@ -1,5 +1,31 @@
 #include "Aluno.h"
 
+// ===== HISTORICO DISCIPLINAR =====
+
+Aluno::HistoricoDisciplinar::HistoricoDisciplinar(string d, int a, float n) {
+    disciplina = d;
+    ano = a;
+    nota = n;
+}
+
+void Aluno::HistoricoDisciplinar::exibir() const {
+    cout << "- " << disciplina << " (" << ano << ") Nota: " << nota << endl;
+}
+
+float Aluno::HistoricoDisciplinar::getNota() const {
+    return nota;
+}
+
+int Aluno::HistoricoDisciplinar::getAno() const {
+    return ano;
+}
+
+string Aluno::HistoricoDisciplinar::getDisciplina() const {
+    return disciplina;
+}
+
+// ===== ALUNO =====
+
 Aluno::Aluno() : UsuarioAutenticavel() {
     matricula = "NULL";
     curso = "NULL";
@@ -26,9 +52,10 @@ void Aluno::gerarRelatorio() const {
     cout << "Matrícula: " << matricula << endl;
     cout << "Curso: " << curso << endl;
     cout << "Histórico:\n";
+
     for (auto &h : historico) {
         h.exibir();
-    }   
+    }
 }
 
 float Aluno::calcularMedia() const {
@@ -41,9 +68,11 @@ float Aluno::calcularMedia() const {
     return soma / historico.size();
 }
 
-const std::vector<Aluno::HistoricoDisciplinar>& Aluno::getHistorico() const {
+const vector<Aluno::HistoricoDisciplinar>& Aluno::getHistorico() const {
     return historico;
 }
+
+// ===== GETTERS =====
 
 string Aluno::getMatricula() const {
     return matricula;
